@@ -82,7 +82,7 @@ def fit_global(kernel_size, spectrum, spectrum_err, spectrum_blaze, wavelength,
                                                           initial_rv=RV_array[0])
     else:
         p0_initial = None
-    print('开始运行')
+    print('开始运行, 你小子还真他妈是个天才！')
     popt_best, model_spec_best, chi_square = fitting_mike(spectrum, spectrum_err, spectrum_blaze,\
                                                           wavelength, prefit_model,  kernel_size,
                                                           p0_initial=p0_initial, 
