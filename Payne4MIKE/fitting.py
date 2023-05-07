@@ -5,6 +5,7 @@ from scipy.optimize import curve_fit, least_squares
 from scipy import interpolate
 from scipy import signal
 from scipy.stats import norm
+from scipy import linalg, optimize
 from . import spectral_model
 from . import utils
 
