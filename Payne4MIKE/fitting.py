@@ -312,7 +312,14 @@ def fitting_mike(spectrum, spectrum_err, spectrum_blaze,\
         if not res.success:
             raise RuntimeError("Optimal parameters not found: " + res.message)
         popt = res.x
-
+        
+        # see https://stackoverflow.com/questions/42388139/how-to-compute-standard-deviation-errors-with-scipy-optimize-least-squares
+        U, s, Vh = linalg.svd(res.jac, full_matrices=False)
+        tol = np.finfo(float).eps*s[0]*max(res.jac.shape)
+        w = s > tol
+        cov = (Vh[w].T/s[w]**2) @ Vh[w]  # robust covariance matrix
+        perr = np.sqrt(np.diag(cov))     # 1sigma uncertainty on fitted parameters
+        
         # calculate chi^2
         model_spec, model_errs = model.evaluate(popt, wavelength, kernel_size, wavelength_normalized)
         #model_spec, model_errs = evaluate_model(popt, NN_coeffs, wavelength_payne, errors_payne,
@@ -326,4 +333,4 @@ def fitting_mike(spectrum, spectrum_err, spectrum_blaze,\
             model_spec_best = model_spec
             popt_best = popt
 
-    return popt_best, model_spec_best.reshape(num_order,num_pixel), chi_2
+    return popt_best, model_spec_best.reshape(num_order,num_pixel), chi_2, perr
