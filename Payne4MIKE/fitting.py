@@ -57,8 +57,7 @@ def fit_global(kernel_size, spectrum, spectrum_err, spectrum_blaze, wavelength,
                                    model.x_min, model.x_max,
                                    model.wavelength_payne, model.errors_payne,
                                    len(order_choice), default_rv_polynomial_order, 1)
-        popt_best, model_spec_best, chi_square, perr
-        = fitting_mike(spectrum, spectrum_err, spectrum_blaze,\
+        popt_best, model_spec_best, chi_square, perr  = fitting_mike(spectrum, spectrum_err, spectrum_blaze,\
                                                               wavelength, rv_model, kernel_size,
                                                               p0_initial=None, 
                                                               RV_prefit=True, blaze_normalized=True,\
