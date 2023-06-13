@@ -9,7 +9,13 @@ from scipy import signal
 from scipy.stats import norm
 import time, os, glob
 import sys, os
-
+from . import Spectrum1D, cross_correlate
+from .UTILS import fast_find_continuum
+#from astropy.stats import biweight_scale
+from .spectral_model import DefaultPayneModel
+from . import plotting
+from . import utils
+from . import fitting
 ### Read/prepare spectrum
 
 def preprocess_spectra(specfname, wmin, wmax):
