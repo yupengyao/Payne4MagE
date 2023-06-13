@@ -12,9 +12,6 @@ import sys, os
 
 ### Read/prepare spectrum
 
-specfname = sys.argv[1]
-wmin = sys.argv[2]
-wmax = sys.argv[3]
 def preprocess_spectra(specfname, wmin, wmax):
   """
   specfname: The path to keep the spectra
