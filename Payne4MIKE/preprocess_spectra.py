@@ -8,7 +8,7 @@ from scipy import interpolate
 from scipy import signal
 from scipy.stats import norm
 import time, os, glob
-
+import sys, os
 
 ### Read/prepare spectrum
 
