@@ -10,7 +10,7 @@ from scipy.stats import norm
 import time, os, glob
 import sys, os
 from .spectrum import Spectrum1D
-from .UTILS import fast_find_continuum
+from .utils_alexmodes import fast_find_continuum
 #from astropy.stats import biweight_scale
 from .spectral_model import DefaultPayneModel
 from . import plotting
