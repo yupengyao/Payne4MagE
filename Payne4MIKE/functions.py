@@ -183,10 +183,16 @@ def spectra_analyzing(specfname, outdir, NNpath, rv0, kernel_size, wavelength, s
            spectrum=spectrum,
            spectrum_err=spectrum_err,
            initial_stellar_labels=initial_stellar_labels)
-
+  
+  print(name)
+  print(wavelength)
+  print(spectrum)
+  print(spectrum_err)
+  print(model_spec_best)
+  print(errors_payne)
   plotting.save_figures(name, wavelength, spectrum, spectrum_err, model_spec_best,
-                        errors_payne, popt_best, model,
-                        outdir, "wave")
+                        errors_payne=errors_payne, popt_best=popt_best, model=model,
+                        outdir=outdir, outfname_format="wave")
 
   
   
