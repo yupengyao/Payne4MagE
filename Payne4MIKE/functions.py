@@ -88,7 +88,6 @@ def preprocess_spectra(specfname, wmin, wmax):
 def spectra_analyzing(specfname, outdir, NNpath, rv0, kernel_size, wavelength, spectrum, spectrum_err, wavelength_blaze, spectrum_blaze):
   norder, npix = wavelength.shape
   num_order = norder
-  specfname = 
   mask_list = [(4850,4880),(6550,6575), (6276,6320),(6866,6881),(6883,6962),(6985,7070)]
 
   spectrum_err = utils.mask_wavelength_regions(wavelength, spectrum_err, mask_list)
