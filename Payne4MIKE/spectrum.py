@@ -19,7 +19,7 @@ from hashlib import md5
 from astropy.io import fits
 from astropy.stats import biweight_scale
 from scipy import interpolate, ndimage, polyfit, poly1d, optimize as op, signal
-from ..robust_polyfit import polyfit as rpolyfit
+from .robust_polyfit import polyfit as rpolyfit
 
 logger = logging.getLogger(__name__)
 
