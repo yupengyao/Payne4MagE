@@ -157,7 +157,7 @@ def spectra_analyzing(specfname, outdir, NNpath, rv0, kernel_size, wavelength, s
                            model, initial_stellar_parameters=initial_stellar_labels,
                            RV_array = RV_array, order_choice=[iorder],
                            bounds_set=bounds)
-  popt_best, model_spec_best, chi_square = out
+  popt_best, model_spec_best, chi_square, perr = out
   print("Took",time.time()-start)
   popt_print = model.transform_coefficients(popt_best)
 
@@ -167,6 +167,7 @@ def spectra_analyzing(specfname, outdir, NNpath, rv0, kernel_size, wavelength, s
         int(popt_print[2]*100.)/100.,\
         int(popt_print[3]*100.)/100.,\
   )
+  print('perr:', perr)
   print("vbroad [km/s] = ", int(popt_print[-2]*10.)/10.)
   print("RV [km/s] = ", int(popt_print[-1]*10.)/10.)
   print("Chi square = ", chi_square)
