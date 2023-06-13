@@ -3,7 +3,7 @@
 #from smhr_session import Session
 import pickle
 import numpy as np
-
+from astropy.stats import biweight_scale
 from scipy import interpolate
 from scipy import signal
 from scipy.stats import norm
