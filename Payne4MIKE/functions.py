@@ -79,7 +79,7 @@ def preprocess_spectra(specfname, wmin, wmax):
   
   return wavelength, spectrum, spectrum_err, wavelength_blaze, spectrum_blaze
   
-def spectra_analyzing(outdir, NNpath, rv0, kernel_size, wavelength, spectrum, spectrum_err, wavelength_blaze, spectrum_blaze)
+def spectra_analyzing(outdir, NNpath, rv0, kernel_size, wavelength, spectrum, spectrum_err, wavelength_blaze, spectrum_blaze):
   norder, npix = wavelength.shape
   num_order = norder
 
