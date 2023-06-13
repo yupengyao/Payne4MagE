@@ -16,7 +16,7 @@ from scipy.stats import norm as norm_distr
 from scipy.stats import pearsonr
 from astropy.modeling import models, fitting
 from astropy.stats import sigma_clip, biweight_scale, median_absolute_deviation
-from ..robust_polyfit import polyfit as rpolyfit
+from .robust_polyfit import polyfit as rpolyfit
 from .spectrum import Spectrum1D, common_dispersion_map2
 from collections import OrderedDict
 
@@ -157,7 +157,7 @@ def find_resolution(multispec_fname, initial_fwhm=.05, usepercentile=True, perce
     """
     from .spectrum import Spectrum1D
     from astropy.stats import sigma_clip, biweight
-    from ..robust_polyfit import gaussfit
+    from .robust_polyfit import gaussfit
     from ..utils import find_distribution_peak
     import time
     arcs = Spectrum1D.read(multispec_fname, flux_ext=4)
