@@ -1,6 +1,9 @@
+# Clone this repository 
 !git clone https://github.com/yupengyao/Payne4MagE.git
 
+# import packages
 from Payne4MagE.Payne4MIKE.functions import preprocess_spectra, spectra_analyzing
+from Payne4MagE.Payne4MIKE.summary import summary
 import astropy
 from astropy.io import fits, ascii
 import numpy as np
@@ -8,7 +11,8 @@ import matplotlib.pyplot as plt
 import sys, os
 from astropy.stats import biweight_scale
 
-path = 'drive/MyDrive/Payne4MagE/payne_inputs/herc_12_multi.fits'
+
+path = 'drive/MyDrive/Payne4MagE/payne_inputs/herc_12_multi.fits' 
 outdir = '/content/drive/MyDrive/Payne4MagE/github_output'
 NNpath = '/content/drive/MyDrive/Payne4MagE/NN_normalized_spectra_float16_fixwave.npz'
 
