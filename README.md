@@ -3,7 +3,7 @@ Tools for fitting MagE spectra with [The Payne](https://github.com/tingyuansen/T
 
 ## Installation and usage
 
-The [Example](https://github.com/tingyuansen/Payne4MIKE/blob/master/tutorial.ipynb) shows some simple use cases.
+The [Example](https://github.com/yupengyao/Payne4MagE/blob/main/Example.py) shows some simple use cases.
 
 ## Dependencies
 * The Python Anacaonda should already contain all the dependencies needed.
