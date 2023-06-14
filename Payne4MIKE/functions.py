@@ -18,14 +18,14 @@ from . import utils
 from . import fitting
 ### Read/prepare spectrum
 
-def preprocess_spectra(specfname, wmin, wmax):
+def preprocess_spectra(path, wmin, wmax):
   """
-  specfname: The path to keep the spectra
+  path: The path to keep the spectra
   wmin: The minimum wavelength of the spectra
   wmax: The maximum wavelength of the spectra
   """
 
-  assert os.path.exists(specfname)
+  assert os.path.exists(path)
 
   def read_spectrum(fname):
       specs = Spectrum1D.read(fname)
@@ -51,7 +51,7 @@ def preprocess_spectra(specfname, wmin, wmax):
           cont[i] = fast_find_continuum(spectrum[i])
       return cont
 
-  wavelength, spectrum, spectrum_err = read_spectrum(specfname)
+  wavelength, spectrum, spectrum_err = read_spectrum(path)
   wavelength_blaze = wavelength.copy() # blaze and spec have same
   spectrum_blaze = get_quick_continuum(wavelength, spectrum)
   wavelength, spectrum, spectrum_err = utils.cut_wavelength(wavelength, spectrum, spectrum_err, wmin, wmax)
@@ -194,9 +194,4 @@ def spectra_analyzing(specfname, outdir, NNpath, rv0, kernel_size, wavelength, s
   plotting.save_figures(kernel_size, name, wavelength, spectrum, spectrum_err, model_spec_best,
                         errors_payne=errors_payne, popt_best=popt_best, model=model,
                         outdir=outdir, outfname_format="wave")
-
-  
-  
-  
-  
   
