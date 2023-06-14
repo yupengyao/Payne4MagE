@@ -1,5 +1,5 @@
-# Payne4MIKE
-Tools for fitting MagE spectra with [The Payne](https://github.com/tingyuansen/The_Payne).
+# Payne4MagE
+Tools for fitting Magellan Echellette and Magellan/MIKE spectra with [The Payne](https://github.com/tingyuansen/The_Payne).
 
 ## Installation and usage
 
