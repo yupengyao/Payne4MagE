@@ -169,8 +169,8 @@ def spectra_analyzing(specfname, outdir, NNpath, rv0, kernel_size, wavelength, s
   )
   
   print("[Teff_err [K], logg_err, Fe/H_err, Alpha/Fe_err] = ",\
-      1000*6.5*int(perr[0]*10000.)/10000.,\
-      5*int(perr[1]*100.)/100.,\
+      1000*6.5*int(perr[0]*1000.)/1000.,\
+      5*int(perr[1]*10000.)/10000.,\
       5.25*int(perr[2]*100.)/100.,\
       0.8*int(perr[3]*100.)/100.,\
   )
