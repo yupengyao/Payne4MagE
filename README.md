@@ -15,7 +15,7 @@ The [tutorial](https://github.com/tingyuansen/Payne4MIKE/blob/master/tutorial.ip
 ## Authors
 * [Yuan-Sen Ting](http://www.sns.ias.edu/~ting/) -- ting at ias dot edu
 * [Alex Ji](https://www.alexji.com/) -- aji at carnegiescience dot edu
-* [Yupeng Yao] -- yyaoastro at gmail dot com
+* Yupeng Yao -- yyaoastro at gmail dot com
 ## Licensing
 
 Copyright 2020 by Yuan-Sen Ting.
