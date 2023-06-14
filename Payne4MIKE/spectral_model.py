@@ -198,7 +198,6 @@ class SpectralModel(object):
             win = norm.pdf((np.arange(2*kernel_size+1)-kernel_size)*(self.wavelength_payne[1]-self.wavelength_payne[0]),\
                            scale=labels[ivbroad]/3e5*5000)
             win = win/np.sum(win)
-            print('kernel size = ', kernel_size)
             # vbroad and RV
             full_spec = signal.convolve(_full_spec, win, mode='same')
             full_spec = self.doppler_shift(self.wavelength_payne, full_spec, labels[irv]*100.)
