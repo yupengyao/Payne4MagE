@@ -167,11 +167,17 @@ def spectra_analyzing(specfname, outdir, NNpath, rv0, kernel_size, wavelength, s
         int(popt_print[2]*100.)/100.,\
         int(popt_print[3]*100.)/100.,\
   )
-  print('perr:', perr)
+  
+  print("[Teff_err [K], logg_err, Fe/H_err, Alpha/Fe_err] = ",\
+      1000*6.5*int(perr[0]*1.)/1.,\
+      5*int(perr[1]*100.)/100.,\
+      5.25*int(perr[2]*100.)/100.,\
+      0.8*int(perr[3]*100.)/100.,\
+  )
+
   print("vbroad [km/s] = ", int(popt_print[-2]*10.)/10.)
   print("RV [km/s] = ", int(popt_print[-1]*10.)/10.)
   print("Chi square = ", chi_square)
-
 
   np.savez(outfname_bestfit,
            popt_best=popt_best,
