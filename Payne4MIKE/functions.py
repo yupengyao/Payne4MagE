@@ -19,7 +19,10 @@ from . import fitting
 ### Read/prepare spectrum
 
 def preprocess_spectra(path, wmin, wmax):
+  
   """
+  preprocessing the spectra
+  
   path: The path to keep the spectra
   wmin: The minimum wavelength of the spectra
   wmax: The maximum wavelength of the spectra
@@ -86,6 +89,17 @@ def preprocess_spectra(path, wmin, wmax):
   return wavelength, spectrum, spectrum_err, wavelength_blaze, spectrum_blaze
   
 def spectra_analyzing(specfname, outdir, NNpath, rv0, kernel_size, wavelength, spectrum, spectrum_err, wavelength_blaze, spectrum_blaze):
+  
+  """
+  Fitting MagE spectrum
+  Fitting stellar labels, stellar labels uncertainties, polynomial continuum, vbroad, and radial velocity simultaneously
+  
+  outdir: the path of the folder to save the fitting results.
+  NNpath: the path of the neural network emulator coefficients.
+  rv0: redius velocity of the target.
+  kernel_size: size of the gaussian convolutional kernel used to reduce the resolution of the emulated spectra.
+  """
+  
   norder, npix = wavelength.shape
   num_order = norder
   mask_list = [(4850,4880),(6550,6575), (6276,6320),(6866,6881),(6883,6962),(6985,7070)]
@@ -194,4 +208,3 @@ def spectra_analyzing(specfname, outdir, NNpath, rv0, kernel_size, wavelength, s
   plotting.save_figures(kernel_size, name, wavelength, spectrum, spectrum_err, model_spec_best,
                         errors_payne=errors_payne, popt_best=popt_best, model=model,
                         outdir=outdir, outfname_format="wave")
-  
