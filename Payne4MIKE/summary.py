@@ -1,8 +1,8 @@
 import numpy as np
 import os, sys, glob
 from astropy.table import Table
-outdir = sys.argv[1]
-if __name__=="__main__":
+
+def summary(outdir):
     alldata = []
     fnames = glob.glob(outdir + "/*.npz")
     for fn in fnames:
